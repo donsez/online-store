@@ -14,7 +14,7 @@ node {
             sh "chmod +x gradlew"
             sh "./gradlew clean --no-daemon"
         }
-
+/*
 #        stage('install tools') {
 #            sh "./gradlew yarn_install -PnodeInstall --no-daemon"
 #        }
@@ -38,7 +38,7 @@ node {
 #                junit '**/build/test-results/karma/TESTS-*.xml'
 #            }
 #        }
-
+*/
         stage('packaging') {
             sh "./gradlew bootRepackage -x test -Pprod -PnodeInstall --no-daemon"
             archiveArtifacts artifacts: '**/build/libs/*.war', fingerprint: true
