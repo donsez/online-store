@@ -19,7 +19,7 @@
     "prodDatabaseType": "mysql",
     "searchEngine": false,
     "messageBroker": false,
-    "serviceDiscoveryType": false,
+    "serviceDiscoveryType": "eureka",
     "buildTool": "gradle",
     "enableSocialSignIn": false,
     "enableSwaggerCodegen": false,
@@ -27,7 +27,7 @@
     "clientFramework": "angularX",
     "useSass": false,
     "clientPackageManager": "yarn",
-    "applicationType": "monolith",
+    "applicationType": "gateway",
     "testFrameworks": [
       "gatling",
       "cucumber",

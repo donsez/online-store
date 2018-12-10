@@ -145,6 +145,10 @@ if (project.hasProperty('prometheus')) {
     apply from: 'gradle/prometheus.gradle'
 }
 
+if (project.hasProperty('zipkin')) {
+    apply from: 'gradle/zipkin.gradle'
+}
+
 configurations {
     providedRuntime
     compile.exclude module: "spring-boot-starter-tomcat"
@@ -178,6 +182,7 @@ dependencies {
     compile "javax.cache:cache-api"
     compile "org.hibernate:hibernate-core"
     compile "com.zaxxer:HikariCP"
+    compile "commons-codec:commons-codec"
     compile "org.apache.commons:commons-lang3"
     compile "commons-io:commons-io"
     compile "javax.transaction:javax.transaction-api"
@@ -201,6 +206,17 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-websocket"
     compile "org.springframework.boot:spring-boot-starter-thymeleaf"
     compile "org.zalando:problem-spring-web"
+    compile "org.springframework.cloud:spring-cloud-starter-zuul"
+    compile "com.github.vladimir-bukhtoyarov:bucket4j-core"
+    compile "com.github.vladimir-bukhtoyarov:bucket4j-jcache"
+    compile "org.springframework.cloud:spring-cloud-starter"
+    compile "org.springframework.cloud:spring-cloud-starter-ribbon"
+    compile "org.springframework.cloud:spring-cloud-starter-hystrix"
+    compile "org.springframework.cloud:spring-cloud-starter-spectator"
+    compile "org.springframework.retry:spring-retry"
+    compile "org.springframework.cloud:spring-cloud-starter-eureka"
+    compile "org.springframework.cloud:spring-cloud-starter-config"
+    compile "org.springframework.cloud:spring-cloud-starter-feign"
     compile "org.springframework.cloud:spring-cloud-spring-service-connector"
     compile "org.springframework:spring-context-support"
     compile "org.springframework.security:spring-security-config"
